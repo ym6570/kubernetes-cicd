@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cicd-web
+  namespace: cicd-lab
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cicd-web
+  template:
+    metadata:
+      labels:
+        app: cicd-web
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.27-alpine
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 500m
+              memory: 128Mi

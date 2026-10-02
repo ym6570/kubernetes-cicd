@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cicd-web-service
+  namespace: cicd-lab
+spec:
+  selector:
+    app: cicd-web
+  ports:
+    - port: 80
+      targetPort: 80
+  type: ClusterIP
