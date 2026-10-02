@@ -4,7 +4,7 @@ metadata:
   name: cicd-web
   namespace: cicd-lab
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: cicd-web
